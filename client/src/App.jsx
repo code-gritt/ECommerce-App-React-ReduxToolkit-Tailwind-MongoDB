@@ -16,7 +16,7 @@ import NotFound from "./pages/not-found";
 function App() {
   const isAuthenticated = true;
   const user = {
-    name:"gokul"
+    name: "gokul",
   };
 
   return (
@@ -44,14 +44,7 @@ function App() {
             <Route path="register" element={<AuthRegister />} />
           </Route>
 
-          <Route
-            path="/admin"
-            element={
-              <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-                <AdminLayout />
-              </CheckAuth>
-            }
-          >
+          <Route path="/admin" element={<AdminLayout />}>
             <Route path="dashboard" element={<AdminDashboard />} />
             <Route path="products" element={<AdminProducts />} />
             <Route path="orders" element={<AdminOrders />} />
